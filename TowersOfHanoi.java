@@ -1,0 +1,2 @@
+public class TowersOfHanoi {    public static void main(String args[]) {        moveDisks(4, 'A', 'C', 'B');    }    public static void moveDisks(int n, char fromTower, char toTower, char auxTower) {        if(n==1) {            System.out.printf("disk %d moved from tower %c to tower %c\n", n, fromTower, toTower);        }        else {            moveDisks(n-1, fromTower, auxTower, toTower);            System.out.printf("disk %d moved from tower %c to tower %c\n", n, fromTower, toTower);
+            moveDisks(n-1, auxTower, toTower, fromTower);        }    }}
